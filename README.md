@@ -2,6 +2,11 @@
 
 Running [`dbt`](https://github.com/dbt-labs/dbt-core) in a docker container on an M1 chip.
 
+> Note: since this is basically building an amd64 image (on an arm machine) that we run on
+> said arm machine via [QEMU emulation](https://www.docker.com/blog/multi-platform-docker-builds/)
+> there may be performance penalties. Thus, it is only for those who are TRULLY desperate in running
+> dbt cli on their local M1 Apple Macs and are running into issues installing dbt normally.
+
 1. Build our container.
 
 ```sh
