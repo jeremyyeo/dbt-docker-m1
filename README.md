@@ -10,7 +10,25 @@ cd dbt-docker-m1
 docker build -t dbt-app . --platform linux/amd64
 ```
 
-2. Run dbt commands.
+2. Check installed dbt adapters.
+
+```sh
+docker run --rm -it dbt-app dbt --version
+```
+
+```
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+installed version: 0.21.0
+   latest version: 0.21.0
+Up to date!
+Plugins:
+  - redshift: 0.21.0
+  - postgres: 0.21.0
+  - snowflake: 0.21.0
+  - bigquery: 0.21.0
+```
+
+3. Run dbt commands.
 
    > Initialize our test project, copy packages.yml file, test downloading dbt packages.
 
